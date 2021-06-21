@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    app: nginx-service
+
+## Deployment should go first
+spec:
+  selector:
+    ## getting from deployment metadata label
+    app: nginx
+  ports:
+    - protocol: TCP
+      port: 80
+      # deployment file send request to port 8080 and we are listing here at target port
+      targetPort: 8080

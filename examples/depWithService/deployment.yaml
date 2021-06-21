@@ -12,6 +12,7 @@ spec:
     matchLabels:
       app: nginx
   template:
+    # Configuration inside configuration of Pod
     metadata:
       labels:
         app: nginx

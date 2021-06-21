@@ -133,6 +133,10 @@ if actual status and desired status not match then Kubernetes fix that.
 
 status data comes from `etcd` (Brain)
 
+`metadata` contains `labels` and `spec` contains `selectors` through which config gets connect to deployment
+
+deployment metadata labels used by service component.
+
 # Resource
 
 1. https://minikube.sigs.k8s.io/docs/start
