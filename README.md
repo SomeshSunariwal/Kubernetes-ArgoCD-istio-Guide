@@ -84,8 +84,9 @@ Its a master slave configuration.
 
 #### 4.2.1 API Server
 
-1. Its like a cluster gateway
-2. acts as a gatekeeper for the authentication
+1. Its like a cluster gateway.
+2. acts as a gatekeeper for the authentication.
+3. Request first come to API Server.
 
    ![image4](images/image4.JPG)
 
@@ -107,3 +108,21 @@ Its a master slave configuration.
 3. Application data is not stored in `etcd`
 
 ![image6](images/image6.JPG)
+
+## 5. Software
+
+1. Minikube (Have dependancy Kubectl )
+2. Docker Runtime (Container for MiniKube)
+
+## 6. Layer of Abstraction
+
+1. Deployment manages a Replica-Set
+2. Replica-Set manages a pods.
+3. Pods Manages a container runtime.
+4. Below everything is manage by Kubernetes
+
+# Resource
+
+1. https://minikube.sigs.k8s.io/docs/start
+
+2. https://minikube.sigs.k8s.io/docs/drivers/docker
