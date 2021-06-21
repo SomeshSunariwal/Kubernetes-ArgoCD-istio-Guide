@@ -64,4 +64,46 @@ Here I try to Create end to end flow with Kubernetes and ArgoCD.
 5. Database read and write state be handled by statefulSet but
 6. Deploying statefulSet is not easy process. Common practice is to host database outside the kubernetes cluster.
 
-![image](images/image2.JPG)
+![image2](images/image2.JPG)
+
+## 4 Kubernetes Architecture
+
+Its a master slave configuration.
+
+### 4.1 Node
+
+1. Each node has multiple pods.
+2. 3 process must be installed on every Node.(Container Runtime, Kubelets, Kube proxy)
+3. Worker node do the actual work.
+4. Kubelet is responsible running, starting, restarting and assign resources to containers.
+5. Kube Proxy ensure that request is handle in same node.
+
+![image3](images/image3.JPG)
+
+### 4.2 Master Process
+
+#### 4.2.1 API Server
+
+1. Its like a cluster gateway
+2. acts as a gatekeeper for the authentication
+
+   ![image4](images/image4.JPG)
+
+#### 4.2.2 Scheduler
+
+1. Where to put the pod.
+2. if any node has less resource utilization then next pod will be assign to that particular node.
+   ![image5](/images/image5.JPG)
+
+#### 4.2.3 Controller Manager
+
+1. Detect state change in pod. If crashed then create new pod.
+2. Make request to schedular and schedular assign pod to node according to resource availability.
+
+#### 4.2.4 etcd
+
+1. it's a key value store.
+2. Cluster Brain(state change, resource info, cluster health)
+3. Application data is not stored in `etcd`
+
+![image6](images/image6.JPG)
