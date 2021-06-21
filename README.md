@@ -121,6 +121,18 @@ Its a master slave configuration.
 3. Pods Manages a container runtime.
 4. Below everything is manage by Kubernetes
 
+## 7 Kubernetes Config
+
+Has 2 parts
+
+1. metadata: container name
+2. specification: service specification (like image-name, port)
+3. status (auto generated)
+
+if actual status and desired status not match then Kubernetes fix that.
+
+status data comes from `etcd` (Brain)
+
 # Resource
 
 1. https://minikube.sigs.k8s.io/docs/start
