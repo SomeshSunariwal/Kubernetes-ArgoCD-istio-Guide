@@ -38,7 +38,7 @@ Here I try to Create end to end flow with Kubernetes and ArgoCD.
 
 1. Request from outside first go to ingress and then forward to service.
 
-![image](images/image1.jpg)
+![](images/image1.jpg)
 
 ### 3.4 Config Map
 
@@ -64,4 +64,4 @@ Here I try to Create end to end flow with Kubernetes and ArgoCD.
 5. Database read and write state be handled by statefulSet but
 6. Deploying statefulSet is not easy process. Common practice is to host database outside the kubernetes cluster.
 
-![image](images/image2.jpg)
+![](images/image2.jpg)
