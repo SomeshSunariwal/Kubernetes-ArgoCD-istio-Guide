@@ -22,9 +22,9 @@ spec:
           env: # environment variable
             - name: MONGO_INITDB_ROOT_USERNAME
               valueFrom:
-              secretKeyRef:
-                name: mango-db-secret
-                key: mongo-db-username
+                secretKeyRef:
+                  name: mango-db-secret
+                  key: mongo-db-username
             - name: MONGO_INITDB_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
