@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongoDB
+  labels:
+    app: mongoDB
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongoDB
+  template:
+    metadata:
+      labels:
+        app: mongoDB
+    spec:
+      containers:
+        - name: mongoDB #https://hub.docker.com/_/mongo
+          image: mango
+          ports:
+            - containerPort: 27017
+          env: # environment variable
+            - name: MONGO_INITDB_ROOT_USERNAME
+              valueFrom:
+              secretKeyRef:
+                name: mangoDB-secret
+                key: mongo-db-username
+            - name: MONGO_INITDB_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mangoDB-secret
+                  key: mongo-db-password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-db-service
+spec:
+  selector:
+    app: mongoDB
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 27017
