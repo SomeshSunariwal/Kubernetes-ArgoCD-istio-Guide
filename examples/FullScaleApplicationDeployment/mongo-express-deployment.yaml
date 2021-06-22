@@ -18,7 +18,7 @@ spec:
         - name: mongo-express #https://hub.docker.com/_/mongo-express
           image: mongo-express
           ports:
-            containerPort: 8081
+            - containerPort: 8081
           env:
             - name: ME_CONFIG_MONGODB_ADMINUSERNAME
               valueFrom:
