@@ -105,3 +105,21 @@ kubectl apply -f filename.yaml
 ```
 kubectl get all -n name
 ```
+
+17. Describe Service Related all Info
+
+```bash
+kubectl describe service service-names
+```
+
+18. Get the wide info of all pods
+
+```bash
+kubectl get pods -o wide
+```
+
+19. See the deployment file in terminal
+
+```bash
+kubectl get deployment deployment-name -o yaml
+```
