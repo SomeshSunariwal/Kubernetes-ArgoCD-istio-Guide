@@ -137,8 +137,15 @@ status data comes from `etcd` (Brain)
 
 deployment metadata labels used by service component.
 
+# Issues Solution
+
+1. ArgoCD Path in window CMD Terminal : `kubectl patch svc argocd-server -n argocd -p "{\"spec\": {\"type\": \"LoadBalancer\"}}"`
+2. ArgoCD Login : `argocd-windows-amd64.exe login localhost:8080`
+
 # Resource
 
 1. https://minikube.sigs.k8s.io/docs/start
 
 2. https://minikube.sigs.k8s.io/docs/drivers/docker
+
+3. https://argoproj.github.io/argo-cd/getting_started
