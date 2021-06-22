@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongoDB
+  name: mongo-db
   labels:
-    app: mongoDB
+    app: mongo-db
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongoDB
+      app: mongo-db
   template:
     metadata:
       labels:
-        app: mongoDB
+        app: mongo-db
     spec:
       containers:
-        - name: mongoDB #https://hub.docker.com/_/mongo
+        - name: mongo-db #https://hub.docker.com/_/mongo
           image: mango
           ports:
             - containerPort: 27017
@@ -37,7 +37,7 @@ metadata:
   name: mongo-db-service
 spec:
   selector:
-    app: mongoDB
+    app: mongo-db
   ports:
     - protocol: TCP
       port: 8080
