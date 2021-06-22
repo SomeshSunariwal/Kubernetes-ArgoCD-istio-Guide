@@ -93,3 +93,15 @@ kubectl delete deployment image-name
 ```
 kubectl apply -f filename.yaml
 ```
+
+15. Run ArgoCD Server
+
+```bash
+ kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+16. Get all info with name
+
+```
+kubectl get all -n name
+```
