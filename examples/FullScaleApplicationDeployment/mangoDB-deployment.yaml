@@ -8,11 +8,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongo-db
+      app: mongo-db # connected to line 6
   template:
     metadata:
       labels:
-        app: mongo-db
+        app: mongo-db # connected to line 6
     spec:
       containers:
         - name: mongo-db #https://hub.docker.com/_/mongo
@@ -37,7 +37,7 @@ metadata:
   name: mongo-db-service
 spec:
   selector:
-    app: mongo-db
+    app: mongo-db # connected to line 6
   ports:
     - protocol: TCP
       port: 8080
