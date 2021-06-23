@@ -121,7 +121,24 @@ Its a master slave configuration.
 3. Pods Manages a container runtime.
 4. Below everything is manage by Kubernetes
 
-## 7 Kubernetes Config
+## 7 Namespaces
+
+1. Organize Resources in namespace.
+2. Virtual cluster inside cluster.
+3. There are some default namespaces
+   1. kube-system: System related data or system process.
+   2. kube-public : publicly access able data
+   3. kube-node-lease: contains the info of the heartbeat
+   4. default namespace
+4. Use Case
+   1. Group Resources in Namespace for better management
+   2. Isolated environment between different team
+   3. Blue/Green Deployment (means pro production cluster with production namespace)
+   4. Limit resource within namespace
+5. access service from different namespace using (service-name.namespace-name)
+6. Persistance volume is not bound to any namespace (live globally)
+
+## Kubernetes Config
 
 Has 2 parts
 
@@ -149,3 +166,5 @@ deployment metadata labels used by service component.
 2. https://minikube.sigs.k8s.io/docs/drivers/docker
 
 3. https://argoproj.github.io/argo-cd/getting_started
+
+4. istio-ingress installation: https://www.youtube.com/watch?v=voAyroDb6xk

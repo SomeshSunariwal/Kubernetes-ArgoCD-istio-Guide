@@ -100,10 +100,10 @@ kubectl apply -f filename.yaml
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-16. Get all info with name
+16. Get all info with namespace
 
 ```
-kubectl get all -n name
+kubectl get all -n namespace-name
 ```
 
 17. Describe Service Related all Info
@@ -128,4 +128,38 @@ kubectl get deployment deployment-name -o yaml
 
 ```bash
 minikube service service-name
+```
+
+21. Create namespace
+
+```bash
+kubectl create namespace new-namespace-name
+```
+
+22. Cluster info
+
+```bash
+kubectl cluster-info
+```
+
+23. Particular component info in namespace
+
+```bash
+kubectl get pod -n namespace-name
+
+kubectl get service -n namespace-name
+
+kubectl get deployment -n namespace-name
+```
+
+24. Show Namespace label
+
+```bash
+kubectl get ns default --show-labels
+```
+
+25. Istio Web Hook Injection
+
+```bash
+kubectl label namespace default istio-injection=enabled
 ```
