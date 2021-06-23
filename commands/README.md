@@ -123,3 +123,9 @@ kubectl get pods -o wide
 ```bash
 kubectl get deployment deployment-name -o yaml
 ```
+
+20. Assign external IP address to externally expose service
+
+```bash
+minikube service service-name
+```
