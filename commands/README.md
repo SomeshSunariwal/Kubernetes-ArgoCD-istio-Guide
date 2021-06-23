@@ -163,3 +163,11 @@ kubectl get ns default --show-labels
 ```bash
 kubectl label namespace default istio-injection=enabled
 ```
+
+26. Port Forwarding to access service locally
+
+```bash
+kubectl port-forward svc/service-name -n namespace port-number
+```
+
+ex: kubectl port-forward svc/kiali -n istio-system 20001
