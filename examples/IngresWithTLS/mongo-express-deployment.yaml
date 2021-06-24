@@ -44,9 +44,7 @@ metadata:
 spec:
   selector:
     app: mongo-express
-  type: LoadBalancer # external Service (outside access able)
   ports:
     - protocol: TCP
       port: 8081
       targetPort: 8081 # connect from line no 21
-      nodePort: 30000 # (Range 30000-32767)
