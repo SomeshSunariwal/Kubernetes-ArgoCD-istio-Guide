@@ -5,8 +5,8 @@ metadata:
 spec:
   tls:
     - hosts:
-      - example.com
-    secretName: mongo-express-secret
+        - example.com
+      secretName: mongo-express-secret
   rules:
     - host: example.com
       http:
