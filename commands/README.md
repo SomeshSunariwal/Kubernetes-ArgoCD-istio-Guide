@@ -171,3 +171,15 @@ kubectl port-forward svc/service-name -n namespace port-number
 ```
 
 ex: kubectl port-forward svc/kiali -n istio-system 20001
+
+27. Get minikube addons
+
+```bash
+minikube addon list
+```
+
+28. Enable addons
+
+```bash
+minikube addon enable ingress
+```
