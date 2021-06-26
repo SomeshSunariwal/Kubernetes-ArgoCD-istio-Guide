@@ -168,3 +168,7 @@ deployment metadata labels used by service component.
 3. https://argoproj.github.io/argo-cd/getting_started
 
 4. istio-ingress installation: https://www.youtube.com/watch?v=voAyroDb6xk
+
+5. TLS Certificate Place: https://support.kerioconnect.gfi.com/hc/en-us/articles/360015200119-Adding-Trusted-Root-Certificates-to-the-Server
+
+6. https://cloud.google.com/kubernetes-engine/docs/how-to/ingress-multi-ssl

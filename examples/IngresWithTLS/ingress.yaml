@@ -2,11 +2,20 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: mongo-express-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    # Attempt to redirect HTTP to HTTPS.
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    # Necessary rewrite rule.
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/use-forwarded-headers: "true"
+
 spec:
   tls:
     - hosts:
         - example.com
       secretName: mongo-express-secret
+
   rules:
     - host: example.com
       http:
