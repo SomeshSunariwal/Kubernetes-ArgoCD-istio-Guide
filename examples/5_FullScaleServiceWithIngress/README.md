@@ -21,6 +21,14 @@ can be checked using `kubectl describe pod-name`
 
 ![image10](../../images/image10.JPG)
 
+If you are using istio local then run the following
+
+```
+kubectl port-forward -n istio-system service/istio-ingressgateway 15021
+```
+
+in order to make request to istio default gateway at using port 15021
+
 ## Getting Telemetry Data
 
 There are some istio ingegration which can be found [here](https://istio.io/latest/docs/ops/integrations/)

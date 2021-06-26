@@ -1,0 +1,26 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: mongo-express-virtual-service
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - service-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /hello
+      route:
+        - destination:
+            port:
+              number: 5000
+            host: hello-world-service
+      match:
+        - uri:
+            prefix: /
+      route:
+        - destination:
+            port:
+              number: 8081
+            host: mongo-express-service
