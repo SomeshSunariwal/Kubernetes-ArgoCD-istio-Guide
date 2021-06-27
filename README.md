@@ -175,4 +175,4 @@ deployment metadata labels used by service component.
 
 7. https://metallb.universe.tf/installation/
 
-8. MetalLB Setup : https://www.youtube.com/watch?v=xYiYIjlAgHY&t=546s
+8. MetalLB Setup : https://www.youtube.com/watch?v=2SmYjj-GFnE

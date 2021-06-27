@@ -183,3 +183,25 @@ minikube addon list
 ```bash
 minikube addon enable ingress
 ```
+
+29. Get the nodes IP info
+
+```bash
+kubectl get node -o wide (Internal IP)
+```
+
+30. get IP range for this node
+
+```
+sipcalc [InternalIP].1/24
+```
+
+if your internal IP is 127.0.56
+
+ex: sipcalc 127.0.0.1/24
+
+31. Continues Request to server for testing only
+
+```bash
+watch curl -s -o /dev/null http://192.168.39.210:80/productpage
+```

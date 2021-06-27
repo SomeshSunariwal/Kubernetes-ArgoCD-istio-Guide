@@ -9,6 +9,5 @@ spec:
   ports:
     - port: 5000
       name: http
-      targetPort: 5000
   selector:
     app: hello-world

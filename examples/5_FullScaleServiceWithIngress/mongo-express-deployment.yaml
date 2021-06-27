@@ -46,5 +46,6 @@ spec:
     app: mongo-express
   ports:
     - protocol: TCP
+      name: http
       port: 8081
       targetPort: 8081 # connect from line no 21
