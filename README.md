@@ -172,3 +172,7 @@ deployment metadata labels used by service component.
 5. TLS Certificate Place: https://support.kerioconnect.gfi.com/hc/en-us/articles/360015200119-Adding-Trusted-Root-Certificates-to-the-Server
 
 6. https://cloud.google.com/kubernetes-engine/docs/how-to/ingress-multi-ssl
+
+7. https://metallb.universe.tf/installation/
+
+8. MetalLB Setup : https://www.youtube.com/watch?v=xYiYIjlAgHY&t=546s

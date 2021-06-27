@@ -40,6 +40,18 @@ and then
 kubectl apply -f ./istio-1.10.1/samples/addons
 ```
 
+## Solution For Pending External IP in istio
+
+did you notice that when a load balancer type service is created that External IP remain pending forever.
+
+To assign external IP to LoadBalancer type service need a `MetalLB`.
+
+it is a load-balancer implementation for `bare metal` Kubernetes clusters.
+
+If you are using kubernetes on virtual service or on local machine you need to use this. If you are using `GCloud` service or any `cloud based service` they provide by default External IP
+
+Link : https://metallb.universe.tf/installation/
+
 ### Supported Integration
 
 1. cert-manager
