@@ -2,7 +2,7 @@
 
 1. Creating the cert files
 
-let suppose `example.com` is certificate provider just like `Google` and `Amazon` (only assume). We create `key` and `crt` for us.
+let suppose `example.com` is certificate provider just like `Google` and `Amazon` (only assume) and they already have `crt` and `key` which we will create below.
 
 ```sh
 export DOMAIN_NAME=example.com
