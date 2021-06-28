@@ -63,4 +63,4 @@ Link : https://metallb.universe.tf/installation/
 
 ## Result
 
-![image12](../../images/image11.JPG)
+![image12](../../images/image12.JPG)
