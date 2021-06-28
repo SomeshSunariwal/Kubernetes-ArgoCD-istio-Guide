@@ -48,7 +48,7 @@ To assign external IP to LoadBalancer type service need a `MetalLB`.
 
 it is a load-balancer implementation for `bare metal` Kubernetes clusters.
 
-If you are using kubernetes on virtual service or on local machine you need to use this. If you are using `GCloud` service or any `cloud based service` they provide by default External IP
+If you are using kubernetes on virtual service or on local machine you need to use this other wise you have to use port forwarding as mentioned above. If you are using `GCloud` service or any `cloud based service` they provide by default External IP
 
 Link : https://metallb.universe.tf/installation/
 
