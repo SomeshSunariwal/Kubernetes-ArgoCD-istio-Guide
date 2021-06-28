@@ -40,6 +40,5 @@ spec:
     app: mongo-db # connected to line 6
   ports:
     - protocol: TCP
-      name: http
       port: 27017
       targetPort: 27017

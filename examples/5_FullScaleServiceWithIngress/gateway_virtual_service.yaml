@@ -1,7 +1,7 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: mongo-express-virtual-service
+  name: virtual-service
 spec:
   hosts:
     - "*"
@@ -10,17 +10,21 @@ spec:
   http:
     - match:
         - uri:
-            prefix: /hello
+            exact: /nginx
+      rewrite:
+          uri: /
       route:
         - destination:
             port:
-              number: 5000
-            host: hello-world-service
+              number: 9090
+            host: nginx-service
       match:
         - uri:
-            prefix: /
+            exact: /mongo
+      rewrite:
+          uri: /
       route:
         - destination:
             port:
               number: 8081
-            host: mongo-express-service
+            host: mongo-express-service.default.svc.cluster.local

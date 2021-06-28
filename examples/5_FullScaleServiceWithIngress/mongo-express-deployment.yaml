@@ -1,9 +1,11 @@
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongo-app-service
+  name: mongo-app-service-v1
   labels:
     app: mongo-express
+    version: v1
 spec:
   replicas: 1
   selector:
@@ -13,10 +15,12 @@ spec:
     metadata:
       labels:
         app: mongo-express
+        version: v1
     spec:
       containers:
         - name: mongo-express #https://hub.docker.com/_/mongo-express
           image: mongo-express
+          imagePullPolicy: IfNotPresent #Always
           ports:
             - containerPort: 8081
           env:
@@ -37,15 +41,59 @@ spec:
                   key: database_url
 
 ---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongo-app-service-v2
+  labels:
+    app: mongo-express
+    version: v2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongo-express
+  template:
+    metadata:
+      labels:
+        app: mongo-express
+        version: v2
+    spec:
+      containers:
+        - name: mongo-express #https://hub.docker.com/_/mongo-express
+          image: mongo-express
+          imagePullPolicy: IfNotPresent #Always
+          ports:
+            - containerPort: 8081
+          env:
+            - name: ME_CONFIG_MONGODB_ADMINUSERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: mango-db-secret
+                  key: mongo-db-username
+            - name: ME_CONFIG_MONGODB_ADMINPASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mango-db-secret
+                  key: mongo-db-password
+            - name: ME_CONFIG_MONGODB_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  name: mongo-express-config
+                  key: database_url
+
+
+---
 apiVersion: v1
 kind: Service
 metadata:
   name: mongo-express-service
+  labels:
+      app: mongo-express
+      service: mongo-express-service
 spec:
   selector:
-    app: mongo-express
+      app: mongo-express
   ports:
-    - protocol: TCP
-      name: http
+    - name: http
       port: 8081
-      targetPort: 8081 # connect from line no 21
