@@ -1,0 +1,25 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: service-gateway
+spec:
+  selector:
+    istio: ingressgateway # use Istio default gateway implementation
+  servers:
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - gamesnews.in
+      tls:
+        httpsRedirect: true # sends 301 redirect for http requests
+    - port:
+        number: 443
+        name: https
+        protocol: HTTPS
+      hosts:
+      - gamesnews.in
+      tls:
+        mode: SIMPLE # enables HTTPS on this port
+        credentialName: nginx-credential
