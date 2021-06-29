@@ -178,3 +178,5 @@ deployment metadata labels used by service component.
 8. MetalLB Setup : https://www.youtube.com/watch?v=2SmYjj-GFnE
 
 9. TLS Certificates : https://youtu.be/nYJJ57WCkxE
+
+10. https://github.com/tetratelabs/istio-weekly/blob/main/istio-weekly/003/demo.md
