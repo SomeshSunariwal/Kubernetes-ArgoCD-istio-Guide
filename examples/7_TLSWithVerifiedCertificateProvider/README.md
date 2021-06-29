@@ -25,7 +25,7 @@
     kubectl create -n istio-system secret tls service-credential-name --key=certificate.key --cert=private.key.crt
    ```
 
-   2. Convert these 2 files data and encode them into base64 using `https://www.base64encode.net/` and appropriately into istio-secret
+   2. Convert these 2 files data and encode them into base64 using `https://www.base64encode.net/` and add data respectivly into `istio-secret.yaml` file.
 
 4. Add INGRESS_IP into GoDaddy Domain DNS Record (I am using linux machine locally so I have add my local ingress IP into record)
 
