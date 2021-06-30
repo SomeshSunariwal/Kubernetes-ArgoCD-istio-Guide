@@ -196,9 +196,9 @@ kubectl get node -o wide (Internal IP)
 sipcalc [InternalIP].1/24
 ```
 
-if your internal IP is 127.0.56
+if your internal IP is 127.0.23.45
 
-ex: sipcalc 127.0.0.1/24
+ex: sipcalc 127.0.23.1/24
 
 31. Continues Request to server for testing only
 
