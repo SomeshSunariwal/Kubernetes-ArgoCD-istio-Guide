@@ -1,4 +1,4 @@
-# Kubernetes-ArgoCD-Guide
+# Kubernetes-ArgoCD-istio-Guide
 
 Here I try to Create end to end flow with Kubernetes and ArgoCD.
 
