@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: example-volume
+  labels:
+    type: local
+spec:
+  #we use local node storage here!
+  #kubectl get storageclass
+  storageClassName: hostpath
+  capacity:
+    storage: 2Gi # Total 2GB Storage
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: /home/somesh/Desktop/data
