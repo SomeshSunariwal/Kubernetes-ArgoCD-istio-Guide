@@ -180,3 +180,5 @@ deployment metadata labels used by service component.
 9. TLS Certificates : https://youtu.be/nYJJ57WCkxE
 
 10. https://github.com/tetratelabs/istio-weekly/blob/main/istio-weekly/003/demo.md
+
+11. https://klaushofrichter.medium.com/minikube-and-lets-encrypt-6e407aabb8ac

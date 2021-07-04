@@ -12,7 +12,9 @@ We got three custom resource Definitions
 
 ### 2. Not able to test it because require Static IP Address for host and I don't have it.
 
-Updating Soon
+Updating Soon...
+
+Reference Link : https://klaushofrichter.medium.com/minikube-and-lets-encrypt-6e407aabb8ac
 
 ### 3. Command To Check Progress:
 
