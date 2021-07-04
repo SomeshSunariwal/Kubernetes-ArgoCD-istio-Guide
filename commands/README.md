@@ -205,3 +205,9 @@ ex: sipcalc 127.0.23.1/24
 ```bash
 watch curl -s -o /dev/null http://192.168.39.210:80/productpage
 ```
+
+32. nginx-ingress controller IP
+
+```
+minikube ip
+```
