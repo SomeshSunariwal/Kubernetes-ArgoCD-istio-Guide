@@ -1,6 +1,6 @@
 # Automatic Certificate Rotation
 
-## CRD
+## 1. CRD
 
 Here we need a `Custom Resource Definition`. So we Add `cert-manager` in kubernetes from [here](https://cert-manager.io/docs/installation/kubernetes/)
 
@@ -10,11 +10,11 @@ We got three custom resource Definitions
 2. ClusterIssuer: work is same as Issuer ( Not BOunded to single namespace)
 3. Certificate: Desire State of certificate and request certificate from issuer when expire.
 
-## How its works:
+### 2. Not able to test it because require Static IP Address for host and I don't have it.
 
-1.
+Updating Soon
 
-### Command To Check Progress:
+### 3. Command To Check Progress:
 
 1. Status of CertificateRequest
 
