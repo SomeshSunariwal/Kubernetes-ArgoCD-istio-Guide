@@ -28,12 +28,12 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: postgres-secret
-                  key: pg_password
+                  key: PG_PASSWORD
             - name: POSTGRES_USER
               valueFrom:
                 secretKeyRef:
                   name: postgres-secret
-                  key: pg_username
+                  key: PG_USERNAME
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:

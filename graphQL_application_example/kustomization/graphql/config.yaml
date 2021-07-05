@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   name: service-config
   namespace: graphql-example
+
 data:
   HOST: postgres-service
   POSTGRES_DB: test_db
