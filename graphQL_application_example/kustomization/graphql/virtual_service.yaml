@@ -9,13 +9,8 @@ spec:
   gateways:
     - service-gateway
   http:
-    - match:
-        - uri:
-            exact: /
-      rewrite:
-        uri: /
-      route:
+    - route:
         - destination:
             port:
-              number: 9090
+              number: 8080
             host: graphql-service

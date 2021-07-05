@@ -4,3 +4,4 @@ metadata:
   name: graphql-example
   labels:
     name: graphql-example
+    istio-injection: enabled

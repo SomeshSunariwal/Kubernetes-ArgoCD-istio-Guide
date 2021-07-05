@@ -4,7 +4,7 @@ resources:
   - namespace/namespace.yaml
   - graphql/config.yaml
   - graphql/gateway.yaml
-  - graphql/virtual_service-nginx.yaml
+  - graphql/virtual_service.yaml
   - graphql/service.yaml
   - graphql/deployment.yaml
   - postgress/persistent-volume-claim.yaml
