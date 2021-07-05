@@ -12,3 +12,7 @@ resources:
   - postgress/secret.yaml
   - postgress/deployment.yaml
   - postgress/service.yaml
+
+---
+## PWD should be ./graphQL_application_example
+## kubectl apply -k kustomization/
