@@ -1,0 +1,21 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: graphql-example
+  namespace: graphql-example
+
+commonLabels:
+  app: graphql
+
+resources:
+  - namespace/namespace.yaml
+  - graphql/config.yaml
+  - graphql/gateway.yaml
+  - graphql/virtual_service-nginx.yaml
+  - graphql/service.yaml
+  - graphql/deployment.yaml
+  - postgress/persistent-volume-claim.yaml
+  - postgress/persistent-volume.yaml
+  - postgress/secret.yaml
+  - postgress/deployment.yaml
+  - postgress/service.yaml

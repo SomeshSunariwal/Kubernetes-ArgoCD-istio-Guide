@@ -2,9 +2,10 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: service-config
+  namespace: graphql-example
 data:
   HOST: postgres-service
 
-  POSTGRES_DB: my_pg_db
+  POSTGRES_DB: test_db
 
   PORT: 8080

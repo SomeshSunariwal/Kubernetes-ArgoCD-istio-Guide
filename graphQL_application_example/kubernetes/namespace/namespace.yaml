@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: graphql-example
+  labels:
+    name: graphql-example
