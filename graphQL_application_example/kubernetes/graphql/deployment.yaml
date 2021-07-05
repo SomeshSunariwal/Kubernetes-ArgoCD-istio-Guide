@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: graphql
-          image: graphql
+          image: someshdokerbox/graphql-boiler-plate
           ports:
             - containerPort: 8080
           env:
