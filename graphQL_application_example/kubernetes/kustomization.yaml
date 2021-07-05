@@ -1,11 +1,4 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-metadata:
-  name: graphql-example
-  namespace: graphql-example
-
-commonLabels:
-  app: graphql
+namespace: graphql-example
 
 resources:
   - namespace/namespace.yaml
