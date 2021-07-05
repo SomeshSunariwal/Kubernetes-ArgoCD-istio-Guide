@@ -24,6 +24,12 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /check-health
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 3
           env:
             - name: PORT
               valueFrom:

@@ -11,7 +11,7 @@ spec:
   http:
     - match:
         - uri:
-            exact: /nginx
+            exact: /
       rewrite:
         uri: /
       route:
