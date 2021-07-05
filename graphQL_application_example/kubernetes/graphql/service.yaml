@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: graphql-service
+  labels:
+    app: graphql
+    service: graphql
+spec:
+  ports:
+    - port: 80
+      name: http
+      targetPort: 8080
+  selector:
+    app: graphql
