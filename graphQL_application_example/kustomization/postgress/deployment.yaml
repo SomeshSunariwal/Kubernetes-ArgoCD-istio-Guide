@@ -37,7 +37,7 @@ spec:
             - name: POSTGRES_DB
               valueFrom:
                 configMapKeyRef:
-                  name: postgres-config
+                  name: service-config
                   key: POSTGRES_DB
           volumeMounts:
             - name: postgres-database-storage
