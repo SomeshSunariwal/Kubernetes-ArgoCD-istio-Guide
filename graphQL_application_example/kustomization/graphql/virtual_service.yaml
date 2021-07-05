@@ -9,7 +9,12 @@ spec:
   gateways:
     - service-gateway
   http:
-    - route:
+    - match:
+        - uri:
+            prefix: "/graph"
+      rewrite:
+        uri: /
+      route:
         - destination:
             port:
               number: 8080
