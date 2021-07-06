@@ -1,10 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: graphql
+  name: graphql-v1
   namespace: graphql-example
   labels:
     app: graphql
+    version: v1
 
 # Service Specification
 spec:
@@ -12,11 +13,13 @@ spec:
   selector:
     matchLabels:
       app: graphql
+      version: v1
   template:
     # Configuration inside configuration of Pod
     metadata:
       labels:
         app: graphql
+        version: v1
     spec:
       containers:
         - name: graphql
@@ -26,10 +29,77 @@ spec:
             - containerPort: 8080
           readinessProbe:
             httpGet:
-              path: /health
+              path: /graph/health
               port: 8080
             initialDelaySeconds: 10
-            periodSeconds: 120
+            periodSeconds: 5
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: service-config
+                  key: PORT
+
+            - name: HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: service-config
+                  key: HOST
+
+            - name: PG_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: PG_USERNAME
+
+            - name: PG_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-secret
+                  key: PG_PASSWORD
+
+            - name: PG_DATABASE_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: service-config
+                  key: POSTGRES_DB
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphql-v2
+  namespace: graphql-example
+  labels:
+    app: graphql
+    version: v2
+
+# Service Specification
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: graphql
+      version: v2
+  template:
+    # Configuration inside configuration of Pod
+    metadata:
+      labels:
+        app: graphql
+        version: v2
+    spec:
+      containers:
+        - name: graphql
+          image: someshdokerbox/graphql-boiler-plate
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /graph/health
+              port: 8080
+            initialDelaySeconds: 10
+            periodSeconds: 5
           env:
             - name: PORT
               valueFrom:

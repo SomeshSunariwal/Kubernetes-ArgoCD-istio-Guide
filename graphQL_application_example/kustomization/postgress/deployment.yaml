@@ -5,6 +5,7 @@ metadata:
   namespace: graphql-example
   labels:
     app: postgres
+    version: v1
 
 # Service Specification
 spec:
@@ -12,11 +13,13 @@ spec:
   selector:
     matchLabels:
       app: postgres
+      version: v1
   template:
     # Configuration inside configuration of Pod
     metadata:
       labels:
         app: postgres
+        version: v1
     spec:
       containers:
         - name: postgres
