@@ -1,0 +1,11 @@
+apiVersion: security.istio.io/v1beta1
+kind: RequestAuthentication
+metadata:
+  name: mongo-express-auth
+spec:
+  selector:
+    matchLabels:
+      app: mongo-express
+  jwtRules:
+    - issuer: "https://dev-852842-admin.okta.com/oauth2/default"
+      jwksUri: "https://dev-852842-admin.okta.com/oauth2/default/v1/keys"

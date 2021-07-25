@@ -10,3 +10,5 @@ resources:
   - oktaConfig.yaml
   - oktaSecret.yaml
   - virtual-service-mongo.yaml
+  - request-auth.yaml
+  - authorization_policy.yaml
