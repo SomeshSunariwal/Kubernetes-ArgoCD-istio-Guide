@@ -1,0 +1,12 @@
+namespace: okta-auth
+
+resources:
+  - namespace.yaml
+  - gateway.yaml
+  - mangoDB-deployment.yaml
+  - mangoDB-secret.yaml
+  - mongo-express-config.yaml
+  - mongo-express-deployment.yaml
+  - oktaConfig.yaml
+  - oktaSecret.yaml
+  - virtual-service-mongo.yaml

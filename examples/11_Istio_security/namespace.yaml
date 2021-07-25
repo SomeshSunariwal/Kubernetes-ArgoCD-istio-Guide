@@ -1,0 +1,7 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: okta-auth
+  labels:
+    name: okta-auth
+    istio-injection: enabled
