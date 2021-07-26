@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: auth-config
+data:
+  ISSUER_BASE_URL:
+  AUDIENCE:
+  BASE_URL:
+
+---
+# Add your Details

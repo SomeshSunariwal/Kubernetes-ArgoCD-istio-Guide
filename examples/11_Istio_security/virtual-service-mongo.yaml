@@ -8,11 +8,6 @@ spec:
   gateways:
     - service-gateway
   http:
-    # - match: #match can be removed
-    #     - uri:
-    #         exact: /mongo
-    #   rewrite:
-    #     uri: /
     - route:
         - destination:
             port:

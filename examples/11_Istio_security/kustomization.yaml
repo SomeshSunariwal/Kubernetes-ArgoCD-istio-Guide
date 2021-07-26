@@ -7,8 +7,8 @@ resources:
   - mangoDB-secret.yaml
   - mongo-express-config.yaml
   - mongo-express-deployment.yaml
-  - oktaConfig.yaml
-  - oktaSecret.yaml
   - virtual-service-mongo.yaml
+  - authConfig.yaml
+  - authSecret.yaml
   - request-auth.yaml
   - authorization_policy.yaml
