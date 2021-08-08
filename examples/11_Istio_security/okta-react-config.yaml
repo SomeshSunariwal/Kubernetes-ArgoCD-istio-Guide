@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: okta-react-config
+data:
+  backend_url: okta-backend-service
+  port: 8080
+  host: okta-react-service

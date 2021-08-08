@@ -11,5 +11,5 @@ spec:
     - route:
         - destination:
             port:
-              number: 8081
-            host: mongo-express-service
+              number: 3000
+            host: okta-react-service

@@ -1,0 +1,50 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okta-react-service
+  labels:
+    app: okta-react-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okta-react-app
+  template:
+    metadata:
+      labels:
+        app: okta-react-app
+    spec:
+      containers:
+        - name: okta-react-app #https://hub.docker.com/okta-react-app
+          image: mongo-express
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_CLIENT_ID
+              valueFrom:
+                secretKeyRef:
+                  name: okta-react-secret
+                  key: react_app_client_id
+            - name: REACT_APP_ISSUER
+              valueFrom:
+                secretKeyRef:
+                  name: okta-react-secret
+                  key: react_app_issuer
+            - name: REACT_APP_BASE_URL
+              valueFrom:
+                configMapKeyRef:
+                  name: okta-react-config
+                  key: backend_url
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: okta-react-service
+spec:
+  selector:
+    app: okta-react
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000 # connect from line no 21

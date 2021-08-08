@@ -1,11 +1,11 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: mongo-express-policy
+  name: okta-backend-service-policy
 spec:
   selector:
     matchLabels:
-      app: mongo-express
+      app: okta-backend
   rules:
     - from:
         - source:

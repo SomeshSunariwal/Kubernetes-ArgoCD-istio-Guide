@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: okta-backend
+  labels:
+    app: okta-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: okta-backend # connected to line 6
+  template:
+    metadata:
+      labels:
+        app: okta-backend # connected to line 6
+    spec:
+      containers:
+        - name: okta-backend #https://hub.docker.com/_/mongo
+          image: mongo
+          ports:
+            - containerPort: 8080
+          env: # environment variable
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: okta-react-config
+                  key: port
+            - name: HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: okta-react-config
+                  key: host
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: okta-backend-service
+spec:
+  selector:
+    app: okta-backend # connected to line 6
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080

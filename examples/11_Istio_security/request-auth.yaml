@@ -1,11 +1,11 @@
 apiVersion: security.istio.io/v1beta1
 kind: RequestAuthentication
 metadata:
-  name: mongo-express-auth
+  name: okta-backend-auth
 spec:
   selector:
     matchLabels:
-      app: mongo-express
+      app: okta-react
   jwtRules:
     - issuer: "https://nitian-sxr.us.auth0.com"
       jwksUri: "https://nitian-sxr.us.auth0.com/.well-known/jwks.json"
