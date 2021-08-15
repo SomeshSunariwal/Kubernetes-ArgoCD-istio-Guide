@@ -3,9 +3,9 @@ kind: ConfigMap
 metadata:
   name: auth-config
 data:
-  ISSUER_BASE_URL:
-  AUDIENCE:
-  BASE_URL:
+  ISSUER_BASE_URL: 	https://dev-852842.okta.com
+  AUDIENCE: 0oa3x6x44m1E4YL734x7
+  BASE_URL: istio-gateway-ip
 
 ---
 # Add your Details
